@@ -24,6 +24,7 @@ public class PlaylistController {
     private PlayListService playListService;
 
     @GetMapping("/listar")
+    @CrossOrigin(origins = "http://localhost:3000/")
     public ResponseEntity<?> listar() {
         try {
             return new ResponseEntity<>(playListService.findAll(), HttpStatus.OK);
@@ -37,6 +38,7 @@ public class PlaylistController {
 
 
     @GetMapping("/ver/{name}")
+    @CrossOrigin(origins = "*")
     public ResponseEntity<?> ver(@PathVariable String name) {
         PlayList playList;
         try {
@@ -51,6 +53,7 @@ public class PlaylistController {
 
 
     @PostMapping("/agregar")
+    @CrossOrigin(origins = "*")
     public ResponseEntity<?> agregar(@RequestBody PlayList playList) {
         try {
             return new ResponseEntity<>(playListService.save(playList), HttpStatus.CREATED);
@@ -63,6 +66,7 @@ public class PlaylistController {
     }
 
     @DeleteMapping("/eliminar/{id}")
+    @CrossOrigin(origins = "*")
     public ResponseEntity<?> eliminar( @PathVariable Long id) {
         try {
             playListService.deleteById(id);

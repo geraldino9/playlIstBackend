@@ -22,8 +22,8 @@ public class PlayList implements Serializable {
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE} )
     @JoinTable( name = "playlistsongs",
-            joinColumns = @JoinColumn(name="playlist_id"),
-            inverseJoinColumns = @JoinColumn(name="song_id"),
+            joinColumns = @JoinColumn(name="playlist_id", insertable = false, updatable = false),
+            inverseJoinColumns = @JoinColumn(name="song_id", insertable = false, updatable = false),
             uniqueConstraints = {@UniqueConstraint(columnNames = {"playlist_id","song_id"})}
     )
     private Set<Songs> songs = new HashSet<Songs>();
@@ -72,9 +72,9 @@ public class PlayList implements Serializable {
         return songs;
     }
 
-    public void setSongs(Set<Songs> songs) {
-        this.songs = songs;
-    }
+//    public void setSongs(Set<Songs> songs) {
+//        this.songs = songs;
+//    }
 
 
 //    public List<Songs> getCanciones() {

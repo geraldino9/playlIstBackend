@@ -2,6 +2,8 @@ package co.dev.playlistapp.model.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "songs")
@@ -18,6 +20,9 @@ public class Songs implements Serializable {
     private String album;
 
     private String anno;
+
+    @ManyToMany(mappedBy = "songs", fetch = FetchType.LAZY)
+    private Set<PlayList> playlist = new HashSet<>();
 
 
     public Long getId() {
