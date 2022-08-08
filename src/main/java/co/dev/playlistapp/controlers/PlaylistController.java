@@ -1,6 +1,6 @@
 package co.dev.playlistapp.controlers;
 
-import co.dev.playlistapp.model.entity.PlayList;
+import co.dev.usuarios.commons.models.entity.PlayList;
 
 import co.dev.playlistapp.service.PlayListService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +16,7 @@ import java.util.Map;
 
 //@RefreshScope
 @RestController
+@RequestMapping("/playlist")
 public class PlaylistController {
     Logger log = LoggerFactory.getLogger( PlaylistController.class );
     private Map<String, Object> responseError;

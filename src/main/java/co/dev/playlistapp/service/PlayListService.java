@@ -1,6 +1,6 @@
 package co.dev.playlistapp.service;
 
-import co.dev.playlistapp.model.entity.PlayList;
+import co.dev.usuarios.commons.models.entity.PlayList;
 import org.springframework.context.annotation.Bean;
 
 

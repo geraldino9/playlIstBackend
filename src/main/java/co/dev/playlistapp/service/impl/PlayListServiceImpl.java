@@ -1,7 +1,7 @@
 package co.dev.playlistapp.service.impl;
 
 import co.dev.playlistapp.model.dao.PlayListDAO;
-import co.dev.playlistapp.model.entity.PlayList;
+import co.dev.usuarios.commons.models.entity.PlayList;
 import co.dev.playlistapp.service.PlayListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
